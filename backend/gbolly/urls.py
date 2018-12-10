@@ -16,8 +16,16 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import url, include
 from django.contrib import admin
+from rest_framework import routers
+
+from projects import views
+
+router = routers.SimpleRouter()
+router.register(r'projects', views.ProjectViewSet)
+urlpatterns = router.urls
 
 urlpatterns = [
     url(r'^markdownx/', include('markdownx.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api/v1/', include(router.urls)),
 ]
