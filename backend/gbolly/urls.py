@@ -18,10 +18,12 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
 
-from projects import views
+from projects import views as pViews
+from blogs import views as bViews
 
 router = routers.SimpleRouter()
-router.register(r'projects', views.ProjectViewSet)
+router.register(r'projects', pViews.ProjectViewSet)
+router.register(r'blogs', bViews.BlogViewSet)
 urlpatterns = router.urls
 
 urlpatterns = [

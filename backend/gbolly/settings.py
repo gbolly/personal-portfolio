@@ -38,8 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'markdownx',
+    'markdown2',
     'rest_framework',
+    'rest_framework.authtoken',
 
+    'blogs',
     'projects',
 ]
 
